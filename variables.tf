@@ -150,3 +150,9 @@ variable "kubescape_account_id" {
   type        = string
   default     = ""
 }
+
+variable "argocd_version" {
+  default     = "5.19.14"
+  type        = string
+  description = "default argocd version"
+}
