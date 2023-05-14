@@ -66,7 +66,7 @@ module "kubernetes_addons_default" {
   aws_for_fluentbit_create_cw_log_group = false
   enable_cert_manager                   = false
   enable_cluster_autoscaler             = true
-  enable_metrics_server                 = true
+  enable_metrics_server                 = false
   enable_prometheus                     = true
   enable_kyverno                        = true
   enable_calico                         = true
