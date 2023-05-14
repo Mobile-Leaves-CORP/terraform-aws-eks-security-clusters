@@ -8,6 +8,9 @@ on:
       - '**.tf'
       - '**.yml'
       - '**.yaml'
+env:
+  TF_DOCS_VERSION: v0.16.0
+  TFLINT_VERSION: v0.41.0
 
 jobs:
   pre-commit:
@@ -15,4 +18,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
+    - name: Setup TFLint
+      uses: terraform-linters/setup-tflint@v3
+      with:
+        tflint_version: ${{env.TFLINT_VERSION}}
+    - name: Setup Terraform docs
+      run: |
+        wget https://github.com/terraform-docs/terraform-docs/releases/download/${{env.TF_DOCS_VERSION}}/terraform-docs-${{env.TF_DOCS_VERSION}}-linux-amd64.tar.gz -O terraform_docs.tar.gz
+        tar -zxvf terraform_docs.tar.gz terraform-docs
+        chmod +x terraform-docs
+        mv terraform-docs /usr/local/bin/
+    - name: setup actionlint
+      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash) && mv actionlint /usr/local/bin
     - uses: pre-commit/action@v3.0.0

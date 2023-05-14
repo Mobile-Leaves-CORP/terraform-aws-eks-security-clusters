@@ -34,7 +34,7 @@ module "kubernetes_addons_default" {
         value = bcrypt_hash.argo.id
       }
     ]
-    version = "5.19.14"
+    version = var.argocd_version
   }
 
   argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
@@ -60,11 +60,11 @@ module "kubernetes_addons_default" {
   }
 
   # Add-ons
-  enable_amazon_eks_aws_ebs_csi_driver = true
+  enable_amazon_eks_aws_ebs_csi_driver = false
   enable_aws_for_fluentbit             = true
   # Let fluentbit create the cw log group
   aws_for_fluentbit_create_cw_log_group = false
-  enable_cert_manager                   = true
+  enable_cert_manager                   = false
   enable_cluster_autoscaler             = true
   enable_metrics_server                 = true
   enable_prometheus                     = true

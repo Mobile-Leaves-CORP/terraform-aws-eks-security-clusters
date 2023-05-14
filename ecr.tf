@@ -1,5 +1,6 @@
 module "ecr" {
   source          = "terraform-aws-modules/ecr/aws"
+  version         = "1.6.0"
   for_each        = toset(var.ecr_repos_list)
   repository_name = each.key
 
