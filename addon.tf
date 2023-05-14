@@ -34,6 +34,7 @@ module "kubernetes_addons_default" {
         value = bcrypt_hash.argo.id
       }
     ]
+    version = "5.19.14"
   }
 
   argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
