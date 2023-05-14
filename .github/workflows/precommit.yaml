@@ -29,6 +29,5 @@ jobs:
         chmod +x terraform-docs
         mv terraform-docs /usr/local/bin/
     - name: setup actionlint
-      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
-
+      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash) && mv actionlint /usr/local/bin
     - uses: pre-commit/action@v3.0.0
