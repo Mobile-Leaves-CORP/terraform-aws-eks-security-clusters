@@ -28,4 +28,7 @@ jobs:
         tar -zxvf terraform_docs.tar.gz terraform-docs
         chmod +x terraform-docs
         mv terraform-docs /usr/local/bin/
+    - name: setup actionlint
+      run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+
     - uses: pre-commit/action@v3.0.0
