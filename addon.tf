@@ -46,11 +46,10 @@ module "kubernetes_addons_default" {
       values             = local.values
     }
     baseconfig = {
-      path               = "./"
-      repo_url           = "https://github.com/abelnieva/eks-security-framework-base.git"
+      path               = var.repo_base_path
+      repo_url           = var.repo_base_url
       add_on_application = false
     }
-
     apps = {
       path               = var.repo_apps_path
       repo_url           = var.repo_apps_url

@@ -97,6 +97,7 @@ variable "tags" {
 }
 
 
+
 variable "dev_teams" {
   description = "dev teams"
   type        = map(any)
@@ -117,7 +118,7 @@ variable "repo_apps_path" {
 
 }
 
-/*
+
 variable "repo_base_url" {
   description = "Repositorio de configuración base dirección web "
   type        = string
@@ -129,7 +130,7 @@ variable "repo_base_path" {
   type        = string
   default     = "./"
 
-} */
+}
 
 variable "ecr_repos_list" {
   description = "Path en el repositorio de configuración base"
@@ -154,5 +155,18 @@ variable "kubescape_account_id" {
 variable "argocd_version" {
   default     = "5.19.14"
   type        = string
-  description = "default argocd version"
+  description = "default argocd helm chart version"
+}
+
+variable "tfc_agent_token" {
+  default     = ""
+  type        = string
+  description = "Token to access to your terraform cloud account"
+}
+
+
+variable "tfc_agent_name" {
+  default     = "agent"
+  type        = string
+  description = "Default Terraform cloud agent to be installed in your account"
 }
