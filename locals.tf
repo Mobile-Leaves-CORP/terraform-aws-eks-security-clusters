@@ -8,7 +8,7 @@ locals {
   cluster_security_group_additional_rules_base = {
     ingress_cluster_all = {
       description              = "Traffic from terraform cloud agent"
-      protocol                 = "HTTPS"
+      protocol                 = "tcp"
       from_port                = 443
       to_port                  = 443
       type                     = "ingress"
