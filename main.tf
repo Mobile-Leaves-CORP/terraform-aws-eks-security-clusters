@@ -34,7 +34,7 @@ module "eks" {
   cluster_name                            = var.cluster_name
   cluster_version                         = var.cluster_version
   cluster_enabled_log_types               = var.cluster_enabled_log_types
-  cluster_security_group_additional_rules = var.cluster_security_group_additional_rules
+  cluster_security_group_additional_rules = merge(local.cluster_security_group_additional_rules_base, var.cluster_security_group_additional_rules)
   cluster_endpoint_public_access_cidrs    = var.cluster_endpoint_public_access_cidrs
   cluster_endpoint_private_access         = var.cluster_endpoint_private_access
   cluster_endpoint_public_access          = var.cluster_endpoint_public_access
