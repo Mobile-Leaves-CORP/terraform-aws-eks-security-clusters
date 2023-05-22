@@ -46,11 +46,10 @@ module "kubernetes_addons_default" {
       values             = local.values
     }
     baseconfig = {
-      path               = "./"
-      repo_url           = "https://github.com/abelnieva/eks-security-framework-base.git"
+      path               = var.repo_base_path
+      repo_url           = var.repo_base_url
       add_on_application = false
     }
-
     apps = {
       path               = var.repo_apps_path
       repo_url           = var.repo_apps_url
@@ -66,7 +65,7 @@ module "kubernetes_addons_default" {
   aws_for_fluentbit_create_cw_log_group = false
   enable_cert_manager                   = false
   enable_cluster_autoscaler             = true
-  enable_metrics_server                 = true
+  enable_metrics_server                 = false
   enable_prometheus                     = true
   enable_kyverno                        = true
   enable_calico                         = true
