@@ -62,7 +62,7 @@ module "vpc_endpoints" {
       }
     }
     },
-    { for service in toset(["autoscaling", "ecr.api", "ecr.dkr", "ec2", "ec2messages", "elasticloadbalancing", "sts", "kms", "logs", "ssm", "ssmmessages"]) :
+    { for service in toset(var.vpc_endpoints_list) :
       replace(service, ".", "_") =>
       {
         service             = service
