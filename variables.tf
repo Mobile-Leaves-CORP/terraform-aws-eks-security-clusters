@@ -66,6 +66,12 @@ variable "vpc_cidr" {
   description = "VPC CIDR, this parameter is needed to create the VPC"
 }
 
+
+variable "vpc_endpoints_list" {
+  default     = ["autoscaling", "ecr.api", "ecr.dkr", "ec2", "ec2messages", "elasticloadbalancing", "sts", "kms", "logs", "ssm", "ssmmessages"]
+  type        = list(string)
+  description = "VPC's Private Endpoints to be created"
+}
 variable "cluster_endpoint_public_access" {
   type        = bool
   description = "Indicates whether or not the EKS public API server endpoint is enabled. Default to EKS resource and it is true"
