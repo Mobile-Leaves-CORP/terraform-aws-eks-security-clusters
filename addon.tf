@@ -48,6 +48,7 @@ module "kubernetes_addons_default" {
     baseconfig = {
       path               = var.repo_base_path
       repo_url           = var.repo_base_url
+      path               = "chart"
       add_on_application = false
     }
     apps = {
