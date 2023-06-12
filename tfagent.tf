@@ -40,9 +40,10 @@ resource "aws_security_group" "tf_agent" {
 resource "aws_instance" "agent" {
   count                  = var.tfc_agent_token != "" ? 1 : 0
   ami                    = data.aws_ami.tfagent.id
-  instance_type          = "t3.micro"
+  instance_type          = var.tfc_agent_instance_type
   subnet_id              = module.vpc.private_subnets[0]
   user_data              = templatefile("${path.module}/template/userdata_tfagent.tpl", { TFC_AGENT_TOKEN = var.tfc_agent_token, TFC_AGENT_NAME = var.tfc_agent_name })
   tags                   = local.tags
   vpc_security_group_ids = [aws_security_group.tf_agent.id]
+  key_name               = aws_key_pair.key.key_name
 }

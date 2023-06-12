@@ -176,3 +176,15 @@ variable "tfc_agent_name" {
   type        = string
   description = "Default Terraform cloud agent to be installed in your account"
 }
+
+variable "tfc_agent_instance_type" {
+  default     = "t3,large"
+  type        = string
+  description = "Default ec2 instance type for terraform cloud"
+}
+
+variable "ssh_public_key" {
+  default     = ""
+  type        = string
+  description = "ssh public key"
+}
