@@ -41,7 +41,7 @@ module "kubernetes_addons_default" {
   argocd_applications = {
     addons = {
       path               = "chart"
-      repo_url           = "https://github.com/abelnieva/eks-blueprints-add-ons.git"
+      repo_url           = var.repo_addons_url
       add_on_application = true
       values             = local.values
     }

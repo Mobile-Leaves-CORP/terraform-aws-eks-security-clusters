@@ -145,6 +145,14 @@ variable "ecr_repos_list" {
 
 }
 
+variable "repo_addons_url" {
+  description = "Repositorio de configuración de addons"
+  type        = string
+  default     = "https://github.com/abelnieva/eks-blueprints-add-ons.git"
+}
+
+
+
 variable "dns_zones" {
   description = "list of dns zones to be managed by cluster"
   type        = list(any)
