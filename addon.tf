@@ -51,12 +51,16 @@ module "kubernetes_addons_default" {
       path               = "chart"
       add_on_application = false
     }
-    apps = {
-      path               = var.repo_apps_path
-      repo_url           = var.repo_apps_url
+    apps_dev = {
+      path               = var.repo_apps_path_dev
+      repo_url           = var.repo_apps_url_dev
       add_on_application = false
     }
-
+    apps_prod = {
+      path               = var.repo_apps_path_prod
+      repo_url           = var.repo_apps_url_prod
+      add_on_application = false
+    }
   }
 
   # Add-ons

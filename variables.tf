@@ -111,19 +111,31 @@ variable "dev_teams" {
 }
 
 
-variable "repo_apps_url" {
+variable "repo_apps_url_dev" {
   description = "Repositorio de las aplicaciones "
   type        = string
   default     = "https://github.com/abelnieva/eks-security-framework-apps.git"
 }
 
-variable "repo_apps_path" {
+variable "repo_apps_path_dev" {
   description = "Path en el repositorio de las aplicaciones "
   type        = string
-  default     = "./"
+  default     = "./main/envs/dev"
 
 }
 
+variable "repo_apps_url_prod" {
+  description = "Repositorio de las aplicaciones "
+  type        = string
+  default     = "https://github.com/abelnieva/eks-security-framework-apps.git"
+}
+
+variable "repo_apps_path_prod" {
+  description = "Path en el repositorio de las aplicaciones "
+  type        = string
+  default     = "./main/envs/prod"
+
+}
 
 variable "repo_base_url" {
   description = "Repositorio de configuración base dirección web "
@@ -148,7 +160,7 @@ variable "ecr_repos_list" {
 variable "repo_addons_url" {
   description = "Repositorio de configuración de addons"
   type        = string
-  default     = "https://github.com/abelnieva/eks-blueprints-add-ons.git"
+  default     = "https://github.com/abelnieva/eks-security-framework-add-ons.git"
 }
 
 
