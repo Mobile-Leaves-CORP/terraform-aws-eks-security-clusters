@@ -186,7 +186,7 @@ variable "tfc_agent_name" {
 }
 
 variable "tfc_agent_instance_type" {
-  default     = "t3,large"
+  default     = "t3.large"
   type        = string
   description = "Default ec2 instance type for terraform cloud"
 }

@@ -5,6 +5,17 @@
 
 This terraform module is part of the terraform eks security framework
 
+## Pre Commit Checks
+
+### Install
+
+brew install pre-commit terraform-docs tflint tfsec checkov terrascan infracost tfupdate minamijoyo/hcledit/hcledit jq
+
+### Install Hoock
+pre-commit install
+### Reference
+
+URL https://github.com/antonbabenko/pre-commit-terraform
 ## Requirements
 
 | Name | Version |
